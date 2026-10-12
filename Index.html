@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaBuild AI — Build Smarter</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+      min-height: 100vh;
+    }
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #26304a;
+      font-size: 22px;
+      font-weight: bold;
+      color: #8b9dff;
+    }
+    main {
+      max-width: 760px;
+      margin: 55px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { font-size: clamp(32px, 7vw, 52px); }
+    p { color: #b8c2dc; line-height: 1.6; }
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      padding: 16px;
+      margin: 20px 0 12px;
+      border: 1px solid #394563;
+      border-radius: 12px;
+      background: #151d32;
+      color: white;
+      font-size: 16px;
+    }
+    button {
+      padding: 14px 22px;
+      border: 0;
+      border-radius: 10px;
+      background: #6878ff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #151d32;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <header>⚡ NexaBuild AI</header>
+  <main>
+    <h1>Build Smarter with AI</h1>
+    <p>Describe your website or app idea to get started.</p>
+
+    <textarea id="idea" placeholder="Example: Create a modern hotel website with rooms, photos and contact details..."></textarea>
+
+    <br>
+    <button onclick="generate()">Generate My Project</button>
+    <div id="message">Your project workspace is ready.</div>
+  </main>
+
+  <script>
+    function generate() {
+      const idea = document.getElementById("idea").value.trim();
+      const message = document.getElementById("message");
+
+      if (!idea) {
+        message.textContent = "Please describe your website or app idea first.";
+        return;
+      }
+
+      message.textContent =
+        "Your idea has been received: " + idea +
+        ". AI code generation needs a working backend connection.";
+    }
+  </script>
+</body>
+</html>
